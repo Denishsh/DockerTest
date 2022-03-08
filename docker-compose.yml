@@ -1,12 +1,13 @@
 version: '3.7'
 services:
   postgresql:
-    image: roko1384/12-alpine
+    image: postgres:14-alpine
     restart: always
     environment:
       - POSTGRES_USER=app
       - POSTGRES_PASSWORD=9mREsvXDs9Gk89Ef
+      - POSTGRES_DB=test
     ports:
-      - '3306:3306'
+      - '5432:5432'
     volumes:
       - ./data:/var/lib/postgres
